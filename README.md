@@ -23,6 +23,7 @@ java-oop-banking-system
 ├── project-flow.md
 ├── crud-operations.md
 └── project-learnings.md
+| design-decisions.md | Explanation of key design choices |
 ```
 
 ---
