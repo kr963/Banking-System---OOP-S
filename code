@@ -1,0 +1,83 @@
+class BankAccount {
+
+```
+int accountNumber;
+String accountHolder;
+String accountType;
+double balance;
+
+BankAccount(int accountNumber, String accountHolder, String accountType, double balance) {
+    this.accountNumber = accountNumber;
+    this.accountHolder = accountHolder;
+    this.accountType = accountType;
+    this.balance = balance;
+}
+
+void deposit(double amount) {
+
+    if (amount > 0) {
+        balance = balance + amount;
+
+        System.out.println("Deposit Successful");
+        System.out.println("Deposited Amount: " + amount);
+        System.out.println("Updated Balance: " + balance);
+    } else {
+        System.out.println("Invalid Deposit Amount");
+    }
+}
+
+void withdraw(double amount) {
+
+    if (amount <= 0) {
+        System.out.println("Invalid Withdrawal Amount");
+    }
+    else if (amount > balance) {
+        System.out.println("Insufficient Balance");
+    }
+    else {
+        balance = balance - amount;
+
+        System.out.println("Withdrawal Successful");
+        System.out.println("Withdrawn Amount: " + amount);
+        System.out.println("Updated Balance: " + balance);
+    }
+}
+
+void checkBalance() {
+    System.out.println("Current Balance: " + balance);
+}
+
+void displayAccountDetails() {
+
+    System.out.println("Account Number: " + accountNumber);
+    System.out.println("Account Holder: " + accountHolder);
+    System.out.println("Account Type: " + accountType);
+    System.out.println("Balance: " + balance);
+}
+```
+
+}
+
+public class BankingApp {
+
+```
+public static void main(String[] args) {
+
+    BankAccount account =
+            new BankAccount(101, "Krishna", "Savings", 1000);
+
+    System.out.println("----- ACCOUNT DETAILS -----");
+    account.displayAccountDetails();
+
+    System.out.println("\n----- DEPOSIT -----");
+    account.deposit(500);
+
+    System.out.println("\n----- WITHDRAW -----");
+    account.withdraw(300);
+
+    System.out.println("\n----- CHECK BALANCE -----");
+    account.checkBalance();
+}
+```
+
+}
